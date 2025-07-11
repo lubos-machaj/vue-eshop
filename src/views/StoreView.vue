@@ -15,5 +15,3 @@ onMounted(async () => {
   console.log('data', data.value)
 })
 </script>
-
-<style></style>
