@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+.button {
+  @apply cursor-pointer rounded-lg bg-black py-1 text-sm font-semibold text-white hover:bg-black/70;
+}
+
 .product-list {
   @apply grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5;
 }

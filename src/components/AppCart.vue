@@ -9,7 +9,7 @@
       />
       <span
         v-text="countAllItems"
-        class="absolute top-1 right-1 h-5 w-5 rounded-full bg-white text-center text-sm text-black"
+        class="absolute top-1 right-1 h-4 w-4 rounded-full bg-white text-center text-xs text-black"
       />
     </div>
   </RouterLink>
@@ -22,8 +22,5 @@ import { useCartStore } from '@/stores/cart'
 import IconCart from '@/components/icons/IconCart.vue'
 
 const cartStore = useCartStore()
-
-const countAllItems = computed(() => {
-  return cartStore.items.reduce((total, item) => total + item.pieces, 0)
-})
+const countAllItems = computed(() => cartStore.totalItems)
 </script>

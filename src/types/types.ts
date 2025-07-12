@@ -7,5 +7,5 @@ export interface Product {
 
 export interface Cart {
   id: number
-  pieces: number
+  quantity: number
 }
