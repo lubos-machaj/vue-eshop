@@ -16,11 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
-import { useCartStore } from '@/stores/cart'
-import IconCart from '@/components/icons/IconCart.vue'
+  import { computed } from 'vue'
+  import { RouterLink } from 'vue-router'
+  import { useCartStore } from '@/stores/cart'
+  import IconCart from '@/components/icons/IconCart.vue'
 
-const cartStore = useCartStore()
-const countAllItems = computed(() => cartStore.totalItems)
+  const cartStore = useCartStore()
+  const countAllItems = computed(() => cartStore.totalItems)
 </script>
