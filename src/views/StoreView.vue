@@ -7,6 +7,7 @@
         <span v-text="formatPrice(item.price)" class="text-sm font-bold" />
         <button
           class="cursor-pointer rounded-lg bg-black px-5 py-1 text-sm font-semibold text-white hover:bg-black/70"
+          @click="cartStore.addItem(item.id)"
         >
           BUY
         </button>
@@ -19,8 +20,10 @@
 import { ref, onMounted } from 'vue'
 import type { Product } from '@/types/types'
 import { formatPrice } from '@/utils/utils'
+import { useCartStore } from '@/stores/cart'
 
 const data = ref<Product[]>([])
+const cartStore = useCartStore()
 
 onMounted(async () => {
   const res = await fetch('/src/data/data.json')

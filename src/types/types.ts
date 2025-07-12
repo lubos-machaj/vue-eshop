@@ -4,3 +4,8 @@ export interface Product {
   price: number
   picture: string
 }
+
+export interface Cart {
+  id: number
+  pieces: number
+}
