@@ -1,6 +1,8 @@
 <template>
   <AppHeader />
-  <RouterView />
+  <main class="container mx-auto p-4">
+    <RouterView />
+  </main>
 </template>
 
 <script setup lang="ts">
