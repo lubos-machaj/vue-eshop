@@ -18,7 +18,7 @@
       id="summary"
       class="h-fit w-full border-2 p-5 text-center sm:w-1/3"
     >
-      <h2 class="text-xl font-semibold">Total</h2>
+      <h2 class="mb-5 text-xl font-semibold">Total</h2>
       <p
         v-text="formatPrice(cartStore.totalPrice)"
         class="text-xl font-bold"
@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
   import { computed } from 'vue'
-  import CartItem from '@/components/CartItem.vue'
+  import CartItem from '../components/CartItem.vue'
   import { useCartStore } from '@/stores/cart'
   import { formatPrice } from '@/utils/utils'
 

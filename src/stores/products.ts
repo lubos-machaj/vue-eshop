@@ -5,7 +5,7 @@ import type { Product } from '@/types/types'
 export const useProductStore = defineStore('product', () => {
   const items = ref<Product[]>([])
 
-  function getProductById(itemId: number): Product {
+  function getProductById(itemId: number): Product | undefined {
     return items.value.find((item) => item.id === itemId)
   }
 

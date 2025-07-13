@@ -7,11 +7,11 @@ export const useCartStore = defineStore('cart', () => {
   const items = ref<Cart[]>([])
   const productStore = useProductStore()
 
-  const totalItems = computed(() => {
+  const totalItems = computed<number>(() => {
     return items.value.reduce((total, item) => total + item.quantity, 0)
   })
 
-  const totalPrice = computed(() => {
+  const totalPrice = computed<number>(() => {
     return items.value.reduce((total, item) => {
       const product = productStore.items.find((p) => p.id === item.id)
       return total + (product ? product.price * item.quantity : 0)
