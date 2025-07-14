@@ -1,8 +1,18 @@
 @import 'tailwindcss';
 
+/**
+ * Global styles
+ * This section defines the base styles for the application.
+ */
+
 .button {
   @apply cursor-pointer rounded-lg bg-black py-1 text-sm font-semibold text-white hover:bg-black/70;
 }
+
+/**
+ * Product list styles
+ * This section defines the grid layout for product items.
+ */
 
 .product-list {
   @apply grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5;

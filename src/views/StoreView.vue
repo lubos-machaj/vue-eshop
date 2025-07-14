@@ -14,12 +14,11 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
-  import type { ProductItemType } from '@/types/types'
+  import { computed } from 'vue'
+  import type { Product } from '@/types/types'
   import { useProductStore } from '@/stores/products'
   import ProductItem from '@/components/ProductItem.vue'
 
   const productStore = useProductStore()
-
-  const products = ref<ProductItemType[]>(productStore.items)
+  const products = computed<Product[]>(() => productStore.items)
 </script>

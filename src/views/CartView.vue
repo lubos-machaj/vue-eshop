@@ -34,6 +34,5 @@
   import { formatPrice } from '@/utils/utils'
 
   const cartStore = useCartStore()
-
   const cartItems = computed(() => cartStore.items)
 </script>

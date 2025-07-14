@@ -1,11 +1,17 @@
-export interface ProductItemType {
+/**
+ * Product type for shop items
+ */
+export interface Product {
   id: number
   name: string
   price: number
   picture: string
 }
 
-export interface CartItemType {
+/**
+ * Cart item type
+ */
+export interface CartItem {
   id: number
   quantity: number
 }

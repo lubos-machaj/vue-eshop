@@ -1,15 +1,15 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { ProductItemType } from '@/types/types'
+import type { Product } from '@/types/types'
 
 export const useProductStore = defineStore('product', () => {
-  const items = ref<ProductItemType[]>([])
+  const items = ref<Product[]>([])
 
-  function getProductById(itemId: number): ProductItemType | undefined {
+  function getProductById(itemId: number): Product | undefined {
     return items.value.find((item) => item.id === itemId)
   }
 
-  function setItems(newItems: ProductItemType[]) {
+  function setItems(newItems: Product[]) {
     items.value = newItems
   }
 

@@ -26,12 +26,12 @@
 <script setup lang="ts">
   import { useCartStore } from '@/stores/cart'
   import { useProductStore } from '@/stores/products'
-  import type { CartItemType } from '@/types/types'
+  import type { CartItem } from '@/types/types'
   import IconX from '@/components/icons/IconX.vue'
   import { formatPrice } from '@/utils/utils'
 
   const props = defineProps<{
-    cartItem: CartItemType
+    cartItem: CartItem
   }>()
 
   const cartStore = useCartStore()
