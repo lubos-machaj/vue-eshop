@@ -48,19 +48,17 @@
 
 <script setup lang="ts">
   import { useCartStore } from '@/stores/cart'
-  import type { ProductItemType, CartItemType } from '@/types/types'
+  import type { Product, CartItem } from '@/types/types'
   import { formatPrice } from '@/utils/utils'
 
   const cartStore = useCartStore()
 
   defineProps<{
-    item: ProductItemType
+    item: Product
   }>()
 
   const numberOfItemsInCart = (id: number) => {
-    const item: CartItemType | undefined = cartStore.items.find(
-      (item: CartItemType) => item.id === id,
-    )
+    const item: CartItem | undefined = cartStore.items.find((item: CartItem) => item.id === id)
     return item ? item.quantity : 0
   }
 </script>
