@@ -1,10 +1,10 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type { Cart } from '@/types/types'
+import type { CartItemType } from '@/types/types'
 import { useProductStore } from '@/stores/products'
 
 export const useCartStore = defineStore('cart', () => {
-  const items = ref<Cart[]>([])
+  const items = ref<CartItemType[]>([])
   const productStore = useProductStore()
 
   const totalItems = computed<number>(() => {
