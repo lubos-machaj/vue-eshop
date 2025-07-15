@@ -11,9 +11,9 @@
 }
 
 .header-nav-link {
-  @apply px-1 py-2;
+  @apply border-b-2 border-transparent px-1 py-2 hover:border-neutral-600;
 }
 
 .header-nav-link-active {
-  @apply border-b-2 border-white;
+  @apply border-white hover:border-white;
 }

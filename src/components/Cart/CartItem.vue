@@ -4,7 +4,10 @@
     class="cart-item"
   >
     <div class="flex w-1/12 items-end justify-start">
-      <button @click="cartStore.removeProduct(props.cartItem.id)">
+      <button
+        @click="cartStore.removeProduct(props.cartItem.id)"
+        :aria-label="`Remove ${selectedProduct.name} from cart`"
+      >
         <IconX class="h-7 w-7 cursor-pointer" />
       </button>
     </div>

@@ -7,6 +7,7 @@
     <img
       :src="item.picture"
       :alt="item.name"
+      loading="lazy"
       class="mb-2 h-auto w-full"
     />
     <p class="product-details">
@@ -15,7 +16,8 @@
         class="text-2xl font-bold"
       />
       <button
-        v-if="numberOfItemsInCart(item.id) < 1"
+        v-if="quantityOfProduct(item.id) < 1"
+        :aria-label="`Add ${item.name} to cart`"
         class="button"
         @click="cartStore.addItem(item.id)"
         v-text="'BUY'"
@@ -24,15 +26,17 @@
         <button
           class="button button-controls"
           @click="cartStore.removeItem(item.id)"
+          :aria-label="`Remove ${item.name} from cart`"
           v-text="'-'"
         />
         <span
-          v-text="numberOfItemsInCart(item.id)"
+          v-text="quantityOfProduct(item.id)"
           class="inline-block w-11 px-2 text-center text-xl font-bold"
         />
         <button
           class="button button-controls"
           @click="cartStore.addItem(item.id)"
+          :aria-label="`Add another ${item.name} to cart`"
           v-text="'+'"
         />
       </span>
@@ -51,7 +55,7 @@
     item: Product
   }>()
 
-  const numberOfItemsInCart = (id: number) => {
+  const quantityOfProduct = (id: number) => {
     const item: CartItem | undefined = cartStore.items.find((item: CartItem) => item.id === id)
     return item ? item.quantity : 0
   }

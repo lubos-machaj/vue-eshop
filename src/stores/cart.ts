@@ -7,19 +7,23 @@ export const useCartStore = defineStore('cart', () => {
   const items = ref<CartItem[]>([])
   const productStore = useProductStore()
 
-  const totalItems = computed(() => {
-    return items.value.reduce((total, item) => total + item.quantity, 0)
-  })
+  const totalItems = computed(() => items.value.reduce((total, item) => total + item.quantity, 0))
 
-  const totalPrice = computed(() => {
-    return items.value.reduce((total, item) => {
+  const totalPrice = computed(() =>
+    items.value.reduce((total, item) => {
       const product = productStore.items.find((p) => p.id === item.id)
-      return total + (product ? product.price * item.quantity : 0)
-    }, 0)
-  })
+      return total + (product?.price ?? 0) * item.quantity
+    }, 0),
+  )
+
+  const findItemById = (itemId: number) => items.value.find((item) => item.id === itemId)
+
+  const removeItemFromArray = (itemId: number) => {
+    items.value = items.value.filter((item) => item.id !== itemId)
+  }
 
   function addItem(itemId: number) {
-    const existingItem = items.value.find((item) => item.id === itemId)
+    const existingItem = findItemById(itemId)
     if (existingItem) {
       existingItem.quantity++
     } else {
@@ -28,21 +32,28 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   function removeProduct(itemId: number) {
-    const existingItem = items.value.find((item) => item.id === itemId)
+    const existingItem = findItemById(itemId)
     if (existingItem) {
-      items.value = items.value.filter((item) => item.id !== itemId)
+      removeItemFromArray(itemId)
     }
   }
 
   function removeItem(itemId: number) {
-    const existingItem = items.value.find((item) => item.id === itemId)
+    const existingItem = findItemById(itemId)
     if (existingItem) {
       existingItem.quantity--
       if (existingItem.quantity <= 0) {
-        items.value = items.value.filter((item) => item.id !== itemId)
+        removeItemFromArray(itemId)
       }
     }
   }
 
-  return { items, totalItems, totalPrice, addItem, removeItem, removeProduct }
+  return {
+    items,
+    totalItems,
+    totalPrice,
+    addItem,
+    removeItem,
+    removeProduct,
+  }
 })
