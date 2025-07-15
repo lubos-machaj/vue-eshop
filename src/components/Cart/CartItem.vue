@@ -17,7 +17,7 @@
     <div class="w-1/6 text-right font-semibold">
       {{ formatPrice(selectedProduct.price) }}
     </div>
-    <div class="w-1/6 text-right">
+    <div class="w-1/6 text-center sm:text-right">
       {{ `${props.cartItem.quantity}x` }}
     </div>
     <div class="w-1/6 text-right font-semibold">

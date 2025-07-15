@@ -11,5 +11,5 @@
 }
 
 .cart-item {
-  @apply mb-3 flex items-center border-2 px-2 py-3 text-xl;
+  @apply mb-3 flex items-center gap-2 border-2 px-2 py-3 text-sm sm:text-base md:text-lg;
 }
