@@ -1,7 +1,6 @@
 <template>
   <section
     v-if="products.length"
-    id="product-list"
     class="product-list"
   >
     <ProductItem

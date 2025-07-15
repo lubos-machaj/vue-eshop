@@ -12,11 +12,17 @@ const router = createRouter({
     {
       path: '/store',
       name: 'store',
+      meta: {
+        title: 'Store',
+      },
       component: StoreView,
     },
     {
       path: '/cart',
       name: 'cart',
+      meta: {
+        title: 'Cart',
+      },
       component: CartView,
     },
   ],

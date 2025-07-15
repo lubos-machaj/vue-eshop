@@ -1,46 +1,40 @@
 <template>
-  <article class="border-2 p-3">
+  <article class="product">
     <h2
       v-text="item.name"
-      class="mb-2 text-center capitalize"
+      class="product-title"
     />
     <img
       :src="item.picture"
       :alt="item.name"
       class="mb-2 h-auto w-full"
     />
-    <p class="flex items-center justify-between">
+    <p class="product-details">
       <span
         v-text="formatPrice(item.price)"
-        class="text-sm font-bold"
+        class="text-2xl font-bold"
       />
       <button
         v-if="numberOfItemsInCart(item.id) < 1"
-        class="button px-5"
+        class="button"
         @click="cartStore.addItem(item.id)"
-      >
-        BUY
-      </button>
-      <span
-        v-else
-        class="text-sm"
-      >
+        v-text="'BUY'"
+      />
+      <span v-else>
         <button
-          class="button px-2"
+          class="button button-controls"
           @click="cartStore.removeItem(item.id)"
-        >
-          -
-        </button>
+          v-text="'-'"
+        />
         <span
           v-text="numberOfItemsInCart(item.id)"
-          class="px-1 font-bold"
+          class="inline-block w-11 px-2 text-center text-xl font-bold"
         />
         <button
-          class="button px-2"
+          class="button button-controls"
           @click="cartStore.addItem(item.id)"
-        >
-          +
-        </button>
+          v-text="'+'"
+        />
       </span>
     </p>
   </article>

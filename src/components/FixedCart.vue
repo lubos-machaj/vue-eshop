@@ -1,15 +1,13 @@
 <template>
   <RouterLink
     to="/cart"
-    class="fixed right-0 bottom-0 flex h-12 w-12 cursor-pointer items-center justify-center rounded-tl-lg bg-black text-white hover:bg-black/70"
+    class="fixed-cart"
   >
     <div class="relative h-full w-full">
-      <IconCart
-        class="absolute top-1/2 left-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 text-white"
-      />
+      <IconCart class="fixed-cart-icon" />
       <span
         v-text="countAllItems"
-        class="absolute top-1 right-1 h-4 w-4 rounded-full bg-white text-center text-xs text-black"
+        class="fixed-cart-badge"
       />
     </div>
   </RouterLink>

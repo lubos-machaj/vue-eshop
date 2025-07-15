@@ -1,0 +1,19 @@
+/**
+ * Product styles
+ */
+
+.product-list {
+  @apply grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.product {
+  @apply border-2 p-3;
+}
+
+.product-title {
+  @apply mb-2 text-center text-2xl font-bold capitalize;
+}
+
+.product-details {
+  @apply flex items-center justify-between text-lg;
+}

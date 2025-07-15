@@ -1,0 +1,15 @@
+/**
+ * Fixed cart styles
+ */
+
+.fixed-cart {
+  @apply fixed right-0 bottom-0 flex h-20 w-20 cursor-pointer items-center justify-center rounded-tl-lg bg-black text-white hover:bg-black/70;
+}
+
+.fixed-cart-icon {
+  @apply absolute top-1/2 left-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 text-white;
+}
+
+.fixed-cart-badge {
+  @apply absolute top-1 right-1 h-7 w-7 rounded-full bg-white text-center text-lg text-black;
+}

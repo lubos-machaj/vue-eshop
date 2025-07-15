@@ -3,7 +3,7 @@
   <main class="container mx-auto p-4">
     <RouterView />
   </main>
-  <AppCart />
+  <FixedCart />
 </template>
 
 <script setup lang="ts">
@@ -12,7 +12,7 @@
   import productsData from './data/data.json'
 
   import AppHeader from './components/AppHeader.vue'
-  import AppCart from './components/AppCart.vue'
+  import FixedCart from './components/FixedCart.vue'
 
   const productStore = useProductStore()
 

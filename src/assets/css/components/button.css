@@ -1,0 +1,7 @@
+.button {
+  @apply cursor-pointer rounded-lg bg-black px-12 py-2 text-xl font-semibold text-white hover:bg-black/70;
+}
+
+.button-controls {
+  @apply w-11 px-0;
+}

@@ -1,0 +1,19 @@
+.header {
+  @apply container mx-auto flex items-center justify-between px-5 py-4;
+}
+
+.header-logo {
+  @apply text-3xl font-bold uppercase;
+}
+
+.header-nav {
+  @apply flex gap-2 text-xl;
+}
+
+.header-nav-link {
+  @apply px-1 py-2;
+}
+
+.header-nav-link-active {
+  @apply border-b-2 border-white;
+}
