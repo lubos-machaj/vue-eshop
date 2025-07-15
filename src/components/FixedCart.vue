@@ -2,10 +2,13 @@
   <RouterLink
     to="/cart"
     class="fixed-cart"
+    title="View Cart"
+    aria-label="View Cart"
   >
     <div class="relative h-full w-full">
       <IconCart class="fixed-cart-icon" />
       <span
+        v-if="countAllItems > 0"
         v-text="countAllItems"
         class="fixed-cart-badge"
       />
